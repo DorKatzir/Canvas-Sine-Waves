@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{ background:#666;margin: 0; }
+        #my_canvas{ background:#2b2b2b; }
+    </style>
+
+    <!-- <script>
+        function initCanvas(){
+
+            let ctx = document.getElementById('my_canvas').getContext('2d');
+            let cW = ctx.canvas.width, cH = ctx.canvas.height;
+            let y = 0;
+            let x = 0;
+            function animate(){
+                ctx.save();
+                ctx.clearRect(0,0,cW,cH); 
+                // Draw Here
+                ctx.fillStyle = 'magenta';
+                ctx.fillRect(0,y,50,50);
+                
+                ctx.fillStyle = 'blue';
+                ctx.fillRect(x,0,50,50);
+
+                y += 3;
+                x += 3;
+                (y >= cW) ? y = 1 : null;
+                (x >= cW) ? x = 1 : null;
+               
+                ctx.restore();
+            }
+
+            let animateInterval = setInterval(animate, 30);
+            ctx.canvas.addEventListener('click', function(event){
+                clearInterval(animateInterval);
+            })
+         
+
+        }
+
+        window.addEventListener('load', function(event){
+            initCanvas();
+        })
+ 
+ 
+    </script> -->
+    <script src="./lib/dat.gui.min.js" defer></script>
+    <script src="./sineWave.js" defer></script>
+    <link rel="stylesheet" href="./lib/dat.gui.css">
+    <title>Canvas Sine Waves</title>
+</head>
+<body>
+    <canvas id="my_canvas" width="800" height="500"></canvas>
+</body>
+</html>
+
