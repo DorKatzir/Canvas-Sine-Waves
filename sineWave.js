@@ -1,18 +1,19 @@
 
 function initCanvas() {
     let ctx = document.getElementById('my_canvas').getContext('2d')
-    let cW = ctx.canvas.width,
-    cH = ctx.canvas.height
+    
+    let cW = (ctx.canvas.width = window.innerWidth),
+        cH = (ctx.canvas.height = window.innerHeight)
     
     const gui = new dat.GUI()
     const wave = { 
                     y: cH/2, 
-                    length: 0.01, 
-                    amplitude: 100,
-                    frequency: 0.03
+                    length: -0.003, 
+                    amplitude: 122,
+                    frequency: 0.028
                 }
     const strokeColor = { 
-                    h: 357,
+                    h: 360,
                     s: 100,
                     l: 50
                 }
@@ -31,7 +32,7 @@ function initCanvas() {
     waveFolder.open()
 
     const strokeFolder = gui.addFolder('strokeColor')
-    strokeFolder.add(strokeColor, 'h', 0, 357 )
+    strokeFolder.add(strokeColor, 'h', 0, 360 )
     strokeFolder.add(strokeColor, 's', 0, 100 )
     strokeFolder.add(strokeColor, 'l', 0, 100 )
     strokeFolder.open()
